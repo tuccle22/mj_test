@@ -18,15 +18,43 @@
 // cd name_of_app
 // npm start                       // this starts the server.  When you change and save a .js file in the src directory your website will refresh automatically
 
+// REACT file.js structure information
+// There are 5 main sections to a React .js file
+
+// 1. imports     -  just like in Java
+//    if you are importing a component you made it looks like this:     import SomeName from './Path/to/file';
+//    if you are importing a component from a library, generally it is: import Something from 'library_name';
+// 2. constructor - here you can create class variables (this.var = 'hello') that hold data
+// 3. class methods - there are a lot of different ways of writing a class method in reactjs
+// 4. render() - here you can create variables and stuff for the html that is returned
+// 5. return - this is the html that you return to the dom of the browser.  It has to have a single outer element (like everything wrapped in a div)
+
 // REACT in general
 
-// a. PROPS
-// props are how data and information is passed to other components.  They are like parameters/arguments in other languages
+// a. JSX HTML
+// this is the basic html element that appears in the browser and is mostly in the return method
+// <div> </div> or <p> </p> or <a> </a> // any normal html tag, remember to always close your tags eg. <input/>
+// <div className='col-s6' style={{marginBottom: '16px'}}> </div> // these are props or arguments that you are passing into the <div></div> element
+//    // you can make a key, value pair object in render() and pass that to style:
+//        // var containerStyle = {width: '70%', height: '100%', paddingBottom: '16px'}; // and used in the return()
+//        // <div style={constainerStyle}> </div>
+// these elements also have all the regular javascript functions
+// <button onClick={this.handleClick} onMouseOver={this.handleMouseOver}> Click or Hover! </button>
+// in your class method you would have a mouseOver and click methods like this:
+// handleMouseOver = () => {
+//   console.log("Mouse Over");
+// }
+// handleClick = () => {
+//   console.log("Button Clicked");
+// }
+
+// b. PROPS
+// props are how data and information is passed to other components/classes.  They are like parameters/arguments in other languages
 //  - props are passed into react components (<SomeComponent passedProps="a string"/>) and are retrieved by that component (this.props.passedProps)
 //  - you can pass functions through props, so that a subcomponent can affect the parent component (this can get complicated)
-//    - the increaseCounter() function is passed into the <Button/> through the someFunction prop
+//    - the increaseCounter() function is passed into the <Button/> through the someFunction prop in the code below
 
-// b. STATE
+// c. STATE
 // state is how the page can refresh some information without reloading the entire page.  It is a series of key, value pairs
 //    this.state.someValue; // this is how you use/access that value
 //    this.setState({key: "value" })   // this is how you change a value and how it knows to look for a changed value and refresh that portion of the page
@@ -41,17 +69,6 @@
 //    { this.state.color === 'red' ? <p>It's red!</p> : ''}
 //    // later if you change the color, the html paragraph will disappear
 //    this.setState({color: 'blue'});
-
-// REACT .js file Information
-// There are 5 main sections to a React .js file
-
-// 1. imports     -  just like in Java
-//    if you are importing a component you made it looks like this:     import SomeName from './Path/to/file';
-//    if you are importing a component from a library, generally it is: import Something from 'library_name';
-// 2. constructor - here you can create class variables (this.var = 'hello') that hold data
-// 3. class methods - there are a lot of different ways of writing a class method in reactjs
-// 4. render() - here you can create variables and stuff for the html that is returned
-// 5. return - this is the html that you return.  It has to have a single outer element (like everything wrapped in a div)
 
 
 
@@ -81,7 +98,7 @@ export default class Stuff extends React.Component {
   }
 
   increaseCounter = () => {
-    this.setState({ counter: this.state.counter + 1})
+    this.setState({ counter: this.state.counter + 1 });
   }
 
   htmlFromFunction = () => {
