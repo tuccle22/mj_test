@@ -1,3 +1,4 @@
+// this is es6 javascript, this'll make sense once you start googling things
 
 // NPM Information
 // npm is a package manager. It lets you install react and javascript libraries
@@ -5,6 +6,11 @@
 // npm install // this installs all the libraries listed in the dependencies section of the package.json file
 // npm start   // starts the server
 // npm install --save library_name // this installs library_name and it gets added to the package.json file
+
+// here are some useful libraries, though it is hard to use them right away
+// react-helmet // https://github.com/nfl/react-helmet // made by devs that work for the NFL and it is used to affect the <head> elements in html // I'll give you some examples when you're ready
+// react-router // https://github.com/ReactTraining/react-router // used to control the address bar url
+// react-bootstrap // this is like bootstrap but with using react components // it doesn't have everything and you can just use regular bootstrap if you want
 
 // the easiest way to start a fresh project is the following:
 // npm install -g create-react-app // this installs the tool create-react-app globablly meaning you can call it from the command line
